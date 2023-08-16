@@ -38,7 +38,7 @@ Find your bot in telgram, press button start
 
 ![img](github/screenshots/screenshot2.jpeg)
 
-3. Second you need to add subcategory in your created category
+2. Second you need to add subcategory in your created category
 ![img](github/screenshots/screenshot3.jpeg)
 
 3. That's it. Now you can add values in your created subcategory
