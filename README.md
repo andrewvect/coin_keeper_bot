@@ -30,19 +30,16 @@ http://localhost:5000/webhook/
 
 How to use it
 
-Find your bot in telgram
+Find your bot in telgram, press button start
 
 ![img](github/screenshots/screenshot1.jpeg)
 
-1. First you need to create category 
-```bash
-create category <your category name> in income 
-```
-2. Second you need to add subcategory in your created category
-```bash
-create subcategory <your subcategory name> in <your category name>
-```
+1. First you need to create category
+
+![img](github/screenshots/screenshot2.jpeg)
+
+3. Second you need to add subcategory in your created category
+![img](github/screenshots/screenshot3.jpeg)
+
 3. That's it. Now you can add values in your created subcategory
-```bash
-100 in <your subcategory name> 
-```
+![img](github/screenshots/screenshot4.jpeg)
