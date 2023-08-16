@@ -32,7 +32,7 @@ How to use it
 
 Find your bot in telgram
 
-[img](github/screenshots/screenshot1.jpeg)
+![img](github/screenshots/screenshot1.jpeg)
 
 1. First you need to create category 
 ```bash
