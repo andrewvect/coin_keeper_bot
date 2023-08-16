@@ -30,6 +30,10 @@ http://localhost:5000/webhook/
 
 How to use it
 
+Find your bot in telgram
+
+[img](github/screenshots/screenshot1.jpeg)
+
 1. First you need to create category 
 ```bash
 create category <your category name> in income 
