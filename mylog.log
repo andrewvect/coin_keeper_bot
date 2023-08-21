@@ -1,0 +1,338 @@
+2023-08-16 16:57:41,046 - app.logger - ERROR - An error occurred: 'builtin_function_or_method' object has no attribute 'split'
+Traceback (most recent call last):
+  File "/Users/andrey/PycharmProjects/test_coin_bot/coin_keeper_bot2/app/telegram_handlers.py", line 82, in handle_add_category
+    category_name = message.text.lower.split()[1]
+AttributeError: 'builtin_function_or_method' object has no attribute 'split'
+2023-08-16 17:00:10,392 - app.logger - ERROR - An error occurred: (psycopg2.errors.NumericValueOutOfRange) integer out of range
+
+[SQL: INSERT INTO categories (name, user_id, type_coin) VALUES (%(name)s, %(user_id)s, %(type_coin)s) RETURNING categories.id]
+[parameters: {'name': 'category', 'user_id': 6547405523, 'type_coin': 1}]
+(Background on this error at: https://sqlalche.me/e/14/9h9h)
+Traceback (most recent call last):
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1803, in _execute_context
+    cursor, statement, parameters, context
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 719, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.NumericValueOutOfRange: integer out of range
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/andrey/PycharmProjects/test_coin_bot/coin_keeper_bot2/app/telegram_handlers.py", line 90, in handle_add_category
+    add_category_to_user(message.chat.id, category_name, category_type, tg_context)
+  File "/Users/andrey/PycharmProjects/test_coin_bot/coin_keeper_bot2/app/queries_to_db.py", line 35, in add_category_to_user
+    db.session.commit()
+  File "<string>", line 2, in commit
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 1428, in commit
+    self._transaction.commit(_to_root=self.future)
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 829, in commit
+    self._prepare_impl()
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 808, in _prepare_impl
+    self.session.flush()
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 3345, in flush
+    self._flush(objects)
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 3485, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 3445, in _flush
+    flush_context.execute()
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/orm/unitofwork.py", line 456, in execute
+    rec.execute(self)
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/orm/unitofwork.py", line 633, in execute
+    uow,
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/orm/persistence.py", line 249, in save_obj
+    insert,
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/orm/persistence.py", line 1224, in _emit_insert_statements
+    execution_options=execution_options,
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1614, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/sql/elements.py", line 326, in _execute_on_connection
+    self, multiparams, params, execution_options
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1491, in _execute_clauseelement
+    cache_hit=cache_hit,
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1846, in _execute_context
+    e, statement, parameters, cursor, context
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 2027, in _handle_dbapi_exception
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1803, in _execute_context
+    cursor, statement, parameters, context
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 719, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.DataError: (psycopg2.errors.NumericValueOutOfRange) integer out of range
+
+[SQL: INSERT INTO categories (name, user_id, type_coin) VALUES (%(name)s, %(user_id)s, %(type_coin)s) RETURNING categories.id]
+[parameters: {'name': 'category', 'user_id': 6547405523, 'type_coin': 1}]
+(Background on this error at: https://sqlalche.me/e/14/9h9h)
+2023-08-16 17:06:23,871 - app.logger - ERROR - An error occurred: (psycopg2.errors.NumericValueOutOfRange) integer out of range
+
+[SQL: INSERT INTO categories (name, user_id, type_coin) VALUES (%(name)s, %(user_id)s, %(type_coin)s) RETURNING categories.id]
+[parameters: {'name': 'category', 'user_id': 6547405523, 'type_coin': 1}]
+(Background on this error at: https://sqlalche.me/e/14/9h9h)
+Traceback (most recent call last):
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1803, in _execute_context
+    cursor, statement, parameters, context
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 719, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.NumericValueOutOfRange: integer out of range
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/andrey/PycharmProjects/test_coin_bot/coin_keeper_bot2/app/telegram_handlers.py", line 90, in handle_add_category
+    add_category_to_user(message.chat.id, category_name, category_type, tg_context)
+  File "/Users/andrey/PycharmProjects/test_coin_bot/coin_keeper_bot2/app/queries_to_db.py", line 35, in add_category_to_user
+    db.session.commit()
+  File "<string>", line 2, in commit
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 1428, in commit
+    self._transaction.commit(_to_root=self.future)
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 829, in commit
+    self._prepare_impl()
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 808, in _prepare_impl
+    self.session.flush()
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 3345, in flush
+    self._flush(objects)
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 3485, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 3445, in _flush
+    flush_context.execute()
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/orm/unitofwork.py", line 456, in execute
+    rec.execute(self)
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/orm/unitofwork.py", line 633, in execute
+    uow,
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/orm/persistence.py", line 249, in save_obj
+    insert,
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/orm/persistence.py", line 1224, in _emit_insert_statements
+    execution_options=execution_options,
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1614, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/sql/elements.py", line 326, in _execute_on_connection
+    self, multiparams, params, execution_options
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1491, in _execute_clauseelement
+    cache_hit=cache_hit,
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1846, in _execute_context
+    e, statement, parameters, cursor, context
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 2027, in _handle_dbapi_exception
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1803, in _execute_context
+    cursor, statement, parameters, context
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 719, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.DataError: (psycopg2.errors.NumericValueOutOfRange) integer out of range
+
+[SQL: INSERT INTO categories (name, user_id, type_coin) VALUES (%(name)s, %(user_id)s, %(type_coin)s) RETURNING categories.id]
+[parameters: {'name': 'category', 'user_id': 6547405523, 'type_coin': 1}]
+(Background on this error at: https://sqlalche.me/e/14/9h9h)
+2023-08-16 17:23:03,251 - app.logger - ERROR - An error occurred: (psycopg2.errors.NumericValueOutOfRange) integer out of range
+
+[SQL: INSERT INTO categories (name, user_id, type_coin) VALUES (%(name)s, %(user_id)s, %(type_coin)s) RETURNING categories.id]
+[parameters: {'name': 'category', 'user_id': 6547405523, 'type_coin': 1}]
+(Background on this error at: https://sqlalche.me/e/14/9h9h)
+Traceback (most recent call last):
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1803, in _execute_context
+    cursor, statement, parameters, context
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 719, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.NumericValueOutOfRange: integer out of range
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/andrey/PycharmProjects/test_coin_bot/coin_keeper_bot2/app/telegram_handlers.py", line 90, in handle_add_category
+    add_category_to_user(message.chat.id, category_name, category_type, tg_context)
+  File "/Users/andrey/PycharmProjects/test_coin_bot/coin_keeper_bot2/app/queries_to_db.py", line 35, in add_category_to_user
+    db.session.commit()
+  File "<string>", line 2, in commit
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 1428, in commit
+    self._transaction.commit(_to_root=self.future)
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 829, in commit
+    self._prepare_impl()
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 808, in _prepare_impl
+    self.session.flush()
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 3345, in flush
+    self._flush(objects)
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 3485, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 3445, in _flush
+    flush_context.execute()
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/orm/unitofwork.py", line 456, in execute
+    rec.execute(self)
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/orm/unitofwork.py", line 633, in execute
+    uow,
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/orm/persistence.py", line 249, in save_obj
+    insert,
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/orm/persistence.py", line 1224, in _emit_insert_statements
+    execution_options=execution_options,
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1614, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/sql/elements.py", line 326, in _execute_on_connection
+    self, multiparams, params, execution_options
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1491, in _execute_clauseelement
+    cache_hit=cache_hit,
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1846, in _execute_context
+    e, statement, parameters, cursor, context
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 2027, in _handle_dbapi_exception
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1803, in _execute_context
+    cursor, statement, parameters, context
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 719, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.DataError: (psycopg2.errors.NumericValueOutOfRange) integer out of range
+
+[SQL: INSERT INTO categories (name, user_id, type_coin) VALUES (%(name)s, %(user_id)s, %(type_coin)s) RETURNING categories.id]
+[parameters: {'name': 'category', 'user_id': 6547405523, 'type_coin': 1}]
+(Background on this error at: https://sqlalche.me/e/14/9h9h)
+2023-08-16 17:33:00,508 - app.logger - ERROR - An error occurred: (psycopg2.errors.NumericValueOutOfRange) integer out of range
+
+[SQL: INSERT INTO categories (name, user_id, type_coin) VALUES (%(name)s, %(user_id)s, %(type_coin)s) RETURNING categories.id]
+[parameters: {'name': 'category', 'user_id': 6547405523, 'type_coin': None}]
+(Background on this error at: https://sqlalche.me/e/14/9h9h)
+Traceback (most recent call last):
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1803, in _execute_context
+    cursor, statement, parameters, context
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 719, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.NumericValueOutOfRange: integer out of range
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/andrey/PycharmProjects/test_coin_bot/coin_keeper_bot2/app/telegram_handlers.py", line 90, in handle_add_category
+    add_category_to_user(message.chat.id, category_name, category_type, tg_context)
+  File "/Users/andrey/PycharmProjects/test_coin_bot/coin_keeper_bot2/app/queries_to_db.py", line 35, in add_category_to_user
+    db.session.commit()
+  File "<string>", line 2, in commit
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 1428, in commit
+    self._transaction.commit(_to_root=self.future)
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 829, in commit
+    self._prepare_impl()
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 808, in _prepare_impl
+    self.session.flush()
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 3345, in flush
+    self._flush(objects)
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 3485, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 3445, in _flush
+    flush_context.execute()
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/orm/unitofwork.py", line 456, in execute
+    rec.execute(self)
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/orm/unitofwork.py", line 633, in execute
+    uow,
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/orm/persistence.py", line 249, in save_obj
+    insert,
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/orm/persistence.py", line 1224, in _emit_insert_statements
+    execution_options=execution_options,
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1614, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/sql/elements.py", line 326, in _execute_on_connection
+    self, multiparams, params, execution_options
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1491, in _execute_clauseelement
+    cache_hit=cache_hit,
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1846, in _execute_context
+    e, statement, parameters, cursor, context
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 2027, in _handle_dbapi_exception
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1803, in _execute_context
+    cursor, statement, parameters, context
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 719, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.DataError: (psycopg2.errors.NumericValueOutOfRange) integer out of range
+
+[SQL: INSERT INTO categories (name, user_id, type_coin) VALUES (%(name)s, %(user_id)s, %(type_coin)s) RETURNING categories.id]
+[parameters: {'name': 'category', 'user_id': 6547405523, 'type_coin': None}]
+(Background on this error at: https://sqlalche.me/e/14/9h9h)
+2023-08-16 17:45:12,059 - app.logger - ERROR - An error occurred: (psycopg2.errors.ForeignKeyViolation) insert or update on table "categories" violates foreign key constraint "categories_type_coin_fkey"
+DETAIL:  Key (type_coin)=(1) is not present in table "types".
+
+[SQL: INSERT INTO categories (name, user_id, type_coin) VALUES (%(name)s, %(user_id)s, %(type_coin)s) RETURNING categories.id]
+[parameters: {'name': 'food', 'user_id': 6547405523, 'type_coin': 1}]
+(Background on this error at: https://sqlalche.me/e/14/gkpj)
+Traceback (most recent call last):
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1803, in _execute_context
+    cursor, statement, parameters, context
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 719, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.ForeignKeyViolation: insert or update on table "categories" violates foreign key constraint "categories_type_coin_fkey"
+DETAIL:  Key (type_coin)=(1) is not present in table "types".
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/andrey/PycharmProjects/test_coin_bot/coin_keeper_bot2/app/telegram_handlers.py", line 90, in handle_add_category
+    add_category_to_user(message.chat.id, category_name, category_type, tg_context)
+  File "/Users/andrey/PycharmProjects/test_coin_bot/coin_keeper_bot2/app/queries_to_db.py", line 35, in add_category_to_user
+    db.session.commit()
+  File "<string>", line 2, in commit
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 1428, in commit
+    self._transaction.commit(_to_root=self.future)
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 829, in commit
+    self._prepare_impl()
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 808, in _prepare_impl
+    self.session.flush()
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 3345, in flush
+    self._flush(objects)
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 3485, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 3445, in _flush
+    flush_context.execute()
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/orm/unitofwork.py", line 456, in execute
+    rec.execute(self)
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/orm/unitofwork.py", line 633, in execute
+    uow,
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/orm/persistence.py", line 249, in save_obj
+    insert,
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/orm/persistence.py", line 1224, in _emit_insert_statements
+    execution_options=execution_options,
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1614, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/sql/elements.py", line 326, in _execute_on_connection
+    self, multiparams, params, execution_options
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1491, in _execute_clauseelement
+    cache_hit=cache_hit,
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1846, in _execute_context
+    e, statement, parameters, cursor, context
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 2027, in _handle_dbapi_exception
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1803, in _execute_context
+    cursor, statement, parameters, context
+  File "/Users/andrey/PycharmProjects/test_coin_bot/flast_test/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 719, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.IntegrityError: (psycopg2.errors.ForeignKeyViolation) insert or update on table "categories" violates foreign key constraint "categories_type_coin_fkey"
+DETAIL:  Key (type_coin)=(1) is not present in table "types".
+
+[SQL: INSERT INTO categories (name, user_id, type_coin) VALUES (%(name)s, %(user_id)s, %(type_coin)s) RETURNING categories.id]
+[parameters: {'name': 'food', 'user_id': 6547405523, 'type_coin': 1}]
+(Background on this error at: https://sqlalche.me/e/14/gkpj)
