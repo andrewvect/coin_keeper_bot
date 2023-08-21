@@ -30,7 +30,7 @@ http://localhost:5000/webhook/
 
 How to use it
 
-Find your bot in telgram, press button start
+Find your bot in telgram, press button start or send /start message.
 
 ![img](github/screenshots/screenshot1.jpeg)
 
@@ -43,3 +43,18 @@ Find your bot in telgram, press button start
 
 3. That's it. Now you can add values in your created subcategory
 ![img](github/screenshots/screenshot4.jpeg)
+
+4.You can rename category/subcategory
+![img](github/screenshots/screenshot5.jpeg)
+
+5.You can delete category/subcategory
+![img](github/screenshots/screenshot6.jpeg)
+
+6.Bot can draw pipe graphic with your data
+![img](github/screenshots/screenshot7.jpeg)
+
+7. You can get your data for number of days in category/subcategory
+![img](github/screenshots/screenshot8.jpeg)
+
+
+
