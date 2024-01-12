@@ -7,3 +7,5 @@ class Config:
     SCHEDULER_API_ENABLED = True
     token = os.environ.get('token')
     SESSION_COOKIE_HTTPONLY = False
+
+settings = Config()
