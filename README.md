@@ -17,7 +17,7 @@ git clone https://github.com/andrewvect/coin_keeper_bot
 
 5. Build doker container with command
 ```bash
-docker build -t coin_bot:tag -f Dockerfile.prod .
+docker build -t coin_bot -f Dockerfile.prod .
 ```
 4. Run docker
 ```bash
