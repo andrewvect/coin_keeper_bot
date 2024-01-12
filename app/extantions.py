@@ -1,9 +1,9 @@
 import telebot
 from apscheduler.schedulers.background import BackgroundScheduler
-from .config import token
+from .config import settings
 
 #Telegram bot
-bot = telebot.TeleBot(token)
+bot = telebot.TeleBot(settings.token)
 
 #Apscheduler
 scheduler = BackgroundScheduler()
